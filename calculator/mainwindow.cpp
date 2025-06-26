@@ -32,12 +32,12 @@ void MainWindow::SetOperation(Operation op)
 {
     if(current_operation_ == Operation::NO_OPERATION){
         calculator_.Set(active_number_);
+        input_number_ = "";
     }
     current_operation_ = op;
     QString formula("%1 %2");
         ui->l_formula->setText(formula.arg(calculator_.GetNumber())
                                       .arg(OpToString(op)));
-    input_number_ = "";
 }
 
 void MainWindow::on_tb_one_clicked()
